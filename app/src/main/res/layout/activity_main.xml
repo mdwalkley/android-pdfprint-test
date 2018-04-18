@@ -87,8 +87,6 @@
             android:visibility="gone"
             android:id="@+id/print_button"/>
 
-
-
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,50 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.aqndroid.justjava.PrintActivity">
 
-    <LinearLayout
+    <LinearLayout android:id="@+id/button_view_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/print_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:onClick="printPDF"
+                android:text="Print" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/editInfo_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="37dp"
+                android:text="Edit Info" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/print_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:id="@+id/receipt_view">
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_view_layout">
 
         <TextView
+            android:id="@+id/companyName_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="JustJava Receipt"
-            android:textAllCaps="true"
+            android:padding="8dp"
+            android:text="Company"
             android:textAlignment="center"
-            android:padding="8dp"
-            />
+            android:textAllCaps="true" />
+
+        <TextView
+            android:id="@+id/personName_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Name"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/other_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Notes"
+            android:padding="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Java | $5.00 | x"
-            android:id="@+id/list_item1"
-            android:padding="8dp"
-            />
+            android:text="Variables:"
+            android:layout_margin="8dp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total: "
-            android:id="@+id/list_total"
-            android:padding="8dp"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Print"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:onClick="printPDF"
-            android:visibility="visible"
-            android:id="@+id/print_button"/>
+            android:text="Results:"
+            android:layout_margin="8dp"/>
 
     </LinearLayout>
 

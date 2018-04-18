@@ -24,8 +24,6 @@ import java.text.NumberFormat;
 
 public class PrintActivity extends AppCompatActivity {
 
-
-
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
@@ -50,10 +48,6 @@ public class PrintActivity extends AppCompatActivity {
             // permissions this app might request.
         }
     }
-
-
-
-
 
 
     @Override
@@ -104,7 +98,7 @@ public class PrintActivity extends AppCompatActivity {
         return false;
     }
 
-    public void printPDF(View printButton){
+    public void printPDF(View view){
         //Request permission to write to storage.
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
@@ -115,10 +109,10 @@ public class PrintActivity extends AppCompatActivity {
         }
 
         //hide print button
-        printButton.setVisibility(View.GONE);
+        findViewById(R.id.button_view_layout).setVisibility(View.GONE);
 
         //create PDF document
-        View parentLayout = findViewById(R.id.receipt_view);
+        View parentLayout = findViewById(R.id.print_view_layout);
         int pagewidth = parentLayout.getWidth();
         int pageheight = parentLayout.getHeight();
         PdfDocument receipt = new PdfDocument();
