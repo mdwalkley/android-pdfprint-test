@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aqndroid.justjava.PrintActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/receipt_view">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="JustJava Receipt"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:padding="8dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Java | $5.00 | x"
+            android:id="@+id/list_item1"
+            android:padding="8dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: "
+            android:id="@+id/list_total"
+            android:padding="8dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Print"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:onClick="printPDF"
+            android:visibility="visible"
+            android:id="@+id/print_button"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
