@@ -1,6 +1,8 @@
 package com.example.aqndroid.justjava;
 
 import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.pdf.PdfDocument;
 import android.media.MediaScannerConnection;
@@ -54,20 +56,23 @@ public class PrintActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_print);
-        addQuantity();
-        addTotal();
-    }
 
-    private void addQuantity(){
-        TextView listView = (TextView) findViewById(R.id.list_item1);
-        listView.append("" + getIntent().getIntExtra("ORDER_QUANTITY", 0));
-    }
+        findViewById(R.id.print_button).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                printPDF(view);
+            }
+        });
 
-    private void addTotal(){
-        TextView totalView = (TextView) findViewById(R.id.list_total);
-        totalView.append(NumberFormat.getCurrencyInstance().format(getIntent().getIntExtra("ORDER_PRICE", 0)*getIntent().getIntExtra("ORDER_QUANTITY", 0)));
-    }
+        findViewById(R.id.editInfo_button).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent editInfoIntent = new Intent(PrintActivity.this, EditInfoActivity.class);
+                startActivity(editInfoIntent);
+            }
+        });
 
+    }
 
 
     private static boolean isExternalStorageReadOnly() {
