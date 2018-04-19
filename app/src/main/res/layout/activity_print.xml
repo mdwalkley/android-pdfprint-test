@@ -64,7 +64,7 @@
             android:textAllCaps="true" />
 
         <TextView
-            android:id="@+id/personName_textView"
+            android:id="@+id/userName_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -72,7 +72,7 @@
             android:padding="8dp" />
 
         <TextView
-            android:id="@+id/other_textView"
+            android:id="@+id/notes_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"

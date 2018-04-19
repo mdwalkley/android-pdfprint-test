@@ -2,7 +2,9 @@ package com.example.aqndroid.justjava;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.pdf.PdfDocument;
 import android.media.MediaScannerConnection;
@@ -16,6 +18,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,9 +74,22 @@ public class PrintActivity extends AppCompatActivity {
                 startActivity(editInfoIntent);
             }
         });
-
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fillInData();
+    }
+
+    private void fillInData(){
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SHARED_PREFS_EDIT_INFO), MODE_PRIVATE);
+        String str = sharedPref.getString(getString(R.string.sharedPref_companyName_key), "Company Name");
+        ((TextView)findViewById(R.id.companyName_textView)).setText(str);
+
+        str = sharedPref.getString(getString(R.string.sharedPref_userName_key), "User Name");
+        ((TextView)findViewById(R.id.userName_textView)).setText(str);
+    }
 
     private static boolean isExternalStorageReadOnly() {
         String extStorageState = Environment.getExternalStorageState();
