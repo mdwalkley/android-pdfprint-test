@@ -6,4 +6,99 @@
     android:layout_height="match_parent"
     tools:context="com.example.aqndroid.justjava.EditInfoActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:text="Export Info"
+            android:gravity="center_horizontal"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
+
+            <TextView
+                android:id="@+id/companyName_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Company Name:"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/companyName_textView"
+                android:hint="My Company"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
+
+            <TextView
+                android:id="@+id/myName_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Name:"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/myName_textView"
+                android:hint="First Last"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
+
+            <TextView
+                android:id="@+id/notes_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Notes:"
+                android:layout_marginRight="8dp"
+                android:gravity="center_vertical"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/notes_textView"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:maxLines="7"
+                android:gravity="top|left"
+                android:scrollbars="vertical"
+                android:background="#15333333" />
+
+        </RelativeLayout>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Save"/>
+
+
+    </LinearLayout>
+
+
+
 </android.support.constraint.ConstraintLayout>
